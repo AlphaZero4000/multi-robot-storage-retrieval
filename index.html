@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!--<<link rel="icon" href="./static/images/favicon.svg">-->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -88,32 +88,23 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a>Tzvika Geft</a><sup></span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a>William Zhang</a>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a>Jingjin Yu</a>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a>Kostas Bekris</a>,
             </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Rutgers University,</span>
           </div>
 
           <div class="column has-text-centered">
@@ -258,31 +249,32 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            This paper proposes a framework for improving the operational efficiency of automated storage systems under uncertainty. It considers a 2D grid-based storage for uniform-sized
+              loads (e.g., containers, pallets, or totes), which are moved by a
+              robot (or other manipulator) along a collision-free path in the
+              grid. The loads are labeled (i.e., unique) and must be stored in a
+              given sequence, and later be retrieved in a different sequence—
+              an operational pattern that arises in logistics applications, such
+              as last-mile distribution centers and shipyards. The objective
+              is to minimize the load relocations to ensure efficient retrieval.
+              A previous result guarantees a zero-relocation solution for
+              known storage and retrieval sequences, even for storage at
+              full capacity, provided that the side of the grid through which
+              loads are stored/retrieved is at least 3 cells wide. However, in
+              practice, the retrieval sequence can change after the storage
+              phase. To address such uncertainty, this work investigates k-
+              bounded perturbations during retrieval, under which any two
+              loads may depart out of order if they are originally at most
+              k positions apart. We prove that a Θ(k) grid width is neces-
+              sary and sufficient for eliminating relocations at maximum
+              capacity. We also provide an efficient solver for computing a
+              storage arrangement that is robust to such perturbations. To ad-
+              dress the higher-uncertainty case where perturbations exceed
+              k, a strategy is introduced to effectively minimize relocations.
+              Extensive experiments show that, for k up to half the grid
+              width, the proposed storage-retrieval framework essentially
+              eliminates relocations. For k values up to the full grid width,
+              relocations are reduced by 50%+.
           </p>
         </div>
       </div>
