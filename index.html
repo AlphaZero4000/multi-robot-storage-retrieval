@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity</title>
+  <title>Complete, Scalable, and Robust Prioritized Planning for Multi-Robot Ordered Storage and Retrieval at Maximum Capacity</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
@@ -86,13 +86,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity</h1>
-          <h2 class="subtitle is-5 publication-subtitle">AAAI 2026 (Oral Presentation)</h2>
+          <h1 class="title is-1 publication-title">Complete, Scalable, and Robust Prioritized Planning for Multi-Robot Ordered Storage and Retrieval at Maximum Capacity</h1>
+          <h2 class="subtitle is-5 publication-subtitle">WAFR 2026 (World Symposium on the Algorithmic Foundations of Robotics)</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Tzvika Geft,</span>
+              William Zhang,</span>
             <span class="author-block">
-              William Zhang,
+              Tzvika Geft,
             <span class="author-block">
               Jingjin Yu,
             </span>
@@ -106,12 +106,12 @@
             <span class="author-block">Rutgers University</span>
           </div>
 
-<!--
+
           <div class="column has-text-centered">
             <div class="publication-links">
 
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/2608.07734"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -120,7 +120,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/2608.07734"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -129,16 +129,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/AlphaZero4000/Multi-Robot-Storage-Optimization"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -146,16 +137,8 @@
                   <span>Code</span>
                   </a>
               </span>
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
--->
+
           </div>
         </div>
       </div>
@@ -169,7 +152,7 @@
     <div class="columns is-centered">
       <div class="column is-three-quarters">
         <video id="paper-video" controls playsinline style="width:100%; height:auto; display:block;">
-          <source src="./static/videos/storage-retrieval-imp-example.mp4" type="video/mp4">
+          <source src="./static/videos/multi-robot-demo.mp4" type="video/mp4">
           Your browser does not support HTML5 video. <a href="./static/videos/example.mov">Download the video</a>.
         </video>
       </div>
@@ -185,32 +168,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper proposes a framework for improving the operational efficiency of automated storage systems under uncertainty. It considers a 2D grid-based storage for uniform-sized
-              loads (e.g., containers, pallets, or totes), which are moved by a
-              robot (or other manipulator) along a collision-free path in the
-              grid. The loads are labeled (i.e., unique) and must be stored in a
-              given sequence, and later be retrieved in a different sequence—
-              an operational pattern that arises in logistics applications, such
-              as last-mile distribution centers and shipyards. The objective
-              is to minimize the load relocations to ensure efficient retrieval.
-              A previous result guarantees a zero-relocation solution for
-              known storage and retrieval sequences, even for storage at
-              full capacity, provided that the side of the grid through which
-              loads are stored/retrieved is at least 3 cells wide. However, in
-              practice, the retrieval sequence can change after the storage
-              phase. To address such uncertainty, this work investigates k-
-              bounded perturbations during retrieval, under which any two
-              loads may depart out of order if they are originally at most
-              k positions apart. We prove that a Θ(k) grid width is neces-
-              sary and sufficient for eliminating relocations at maximum
-              capacity. We also provide an efficient solver for computing a
-              storage arrangement that is robust to such perturbations. To ad-
-              dress the higher-uncertainty case where perturbations exceed
-              k, a strategy is introduced to effectively minimize relocations.
-              Extensive experiments show that, for k up to half the grid
-              width, the proposed storage-retrieval framework essentially
-              eliminates relocations. For k values up to the full grid width,
-              relocations are reduced by 50%+.
+            Automated warehouses face a fundamental trade-off between maximizing storage density and achieving high retrieval throughput. While puzzle-based storage (PBS) architectures increase capacity by eliminating aisles, coordinating multiple robots in these high-density spaces is computationally challenging due to the potential for deadlocks. This paper introduces a novel multi-robot formulation for the ''ordered storage and retrieval problem at maximum capacity''. The focus is on rectangular grids accessible from a single boundary, where loads need to be first stored up to full capacity and then efficiently retrieved, given a planned departure sequence. This work bridges the gap between geometric feasibility and execution efficiency by leveraging the properties of relocation-free arrangements. These properties guide an online, prioritized multi-agent path-finding algorithm, which is the main contribution of this work. Unlike general centralized planners, the approach exploits the specific invariants of the storage arrangement to guarantee completeness and prevent deadlocks, enabling scalability. Experiments demonstrate that the method achieves near-linear improvement in makespan with respect to the number of robots, up to m=C, where C is the grid width. Crucially, the algorithmic overhead of supporting robustness is negligible; the system handles uncertainty in departure sequences using robust storage arrangements with no significant penalty in execution speed compared to the non-robust baseline.
           </p>
         </div>
       </div>
@@ -228,12 +186,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{,
-  author    = {Geft, Tzvika and Zhang, William and Yu, Jingjin and Bekris, Kostas},
-  title     = {Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity},
-  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  year      = {2026},
-}</code></pre>
+    <pre><code>@inproceedings{zhang2026complete,
+  title     = {Complete, Scalable, and Robust Prioritized Planning for Multi-Robot Ordered Storage and Retrieval at Maximum Capacity},
+  author    = {Zhang, William and Geft, Tzvika and Yu, Jingjin and Bekris, Kostas},
+  booktitle = {Algorithmic Foundations of Robotics XVI (Proceedings of WAFR 2026)},
+  series    = {Springer Proceedings in Advanced Robotics},
+  publisher = {Springer},
+  year      = {2026}
+  }</code></pre>
   </div>
 </section>
 
